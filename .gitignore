@@ -1,0 +1,7 @@
+# Source calculation files — do not publish
+*.xlsx
+.~lock.*#
+
+# OS
+.DS_Store
+Thumbs.db
