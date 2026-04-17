@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-HK">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>保費融資銷售流程 · 客戶旅程 + IFA Playbook</title>
+<style>
+  :root {
+    --navy: #0B2545;
+    --navy-soft: #13375E;
+    --navy-light: #E8EEF5;
+    --gold: #C9A961;
+    --gold-soft: #E6D29A;
+    --gold-bg: #FBF5E3;
+    --green: #1F7A4D;
+    --green-bg: #E8F3ED;
+    --red: #B54545;
+    --red-bg: #FBECEC;
+    --amber: #B8770B;
+    --amber-bg: #FFF4DC;
+    --purple: #5B3E99;
+    --purple-bg: #F1ECFB;
+    --gray-700: #3A4251;
+    --gray-500: #6C7683;
+    --gray-300: #C8CCD2;
+    --gray-200: #EAECEF;
+    --gray-100: #F7F8FA;
+    --gray-50: #FCFCFD;
+    --white: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--gray-100);
+    color: var(--gray-700);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+  }
+
+  .num {
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+  }
+
+  /* ===== Hero ===== */
+  .hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+    color: var(--white);
+    border-radius: 14px;
+    padding: 44px 44px 42px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 36px;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 360px; height: 360px;
+    background: radial-gradient(circle, rgba(201,169,97,0.18) 0%, rgba(201,169,97,0) 70%);
+    pointer-events: none;
+  }
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 22px;
+  }
+  .hero-badge {
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: rgba(201,169,97,0.18);
+    color: var(--gold-soft);
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(201,169,97,0.35);
+  }
+  .hero-date {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    white-space: nowrap;
+  }
+  .hero h1 {
+    font-size: 34px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    letter-spacing: 0.01em;
+  }
+  .hero-sub {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    margin: 0 0 24px;
+    max-width: 720px;
+  }
+  .hero-qs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 8px;
+  }
+  .hero-q {
+    background: rgba(255,255,255,0.06);
+    border-left: 3px solid var(--gold);
+    padding: 12px 14px;
+    border-radius: 4px;
+    font-size: 13.5px;
+    color: rgba(255,255,255,0.88);
+  }
+  .hero-q b { color: var(--gold-soft); font-weight: 600; }
+
+  /* ===== Section ===== */
+  section { margin-bottom: 40px; }
+  .section-title {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    margin: 0 0 20px;
+    flex-wrap: wrap;
+  }
+  .section-title h2 {
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--navy);
+    margin: 0;
+  }
+  .section-title .en {
+    font-size: 13px;
+    color: var(--gray-500);
+    letter-spacing: 0.04em;
+  }
+  .section-title::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: var(--gold);
+    border-radius: 2px;
+    transform: translateY(3px);
+  }
+  .stage-num {
+    display: inline-block;
+    background: var(--navy);
+    color: var(--gold-soft);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-left: auto;
+  }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 24px 26px;
+    box-shadow: 0 1px 3px rgba(11,37,69,0.04);
+  }
+
+  .lead {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--gray-700);
+    margin: 0 0 14px;
+  }
+  .lead b { color: var(--navy); font-weight: 600; }
+  .lead .hl { background: var(--gold-bg); padding: 1px 5px; border-radius: 3px; color: var(--navy); font-weight: 600; }
+
+  /* ===== Stage timeline (4 points, horizontal) ===== */
+  .timeline {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 28px 30px 24px;
+    position: relative;
+  }
+  .tl-track {
+    position: relative;
+    padding: 40px 0 10px;
+  }
+  .tl-line {
+    position: absolute;
+    left: 30px; right: 30px;
+    top: 56px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold) 0%, var(--navy) 50%, var(--green) 100%);
+    border-radius: 2px;
+  }
+  .tl-points {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    position: relative;
+  }
+  .tl-point {
+    text-align: center;
+    padding: 0 8px;
+    position: relative;
+    cursor: pointer;
+    transition: transform .15s ease;
+  }
+  .tl-point:hover { transform: translateY(-2px); }
+  .tl-dot {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 3px solid var(--navy);
+    margin: 0 auto 14px;
+    position: relative;
+    z-index: 1;
+    transition: all .15s ease;
+  }
+  .tl-point:first-child .tl-dot { border-color: var(--gold); }
+  .tl-point:last-child .tl-dot { border-color: var(--green); }
+  .tl-point:hover .tl-dot { transform: scale(1.2); box-shadow: 0 0 0 4px rgba(201,169,97,0.2); }
+  .tl-year {
+    font-size: 12px;
+    color: var(--gray-500);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+  .tl-title {
+    font-size: 14.5px;
+    color: var(--navy);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  .tl-body {
+    font-size: 12.5px;
+    color: var(--gray-500);
+    line-height: 1.65;
+    text-align: left;
+    background: var(--gray-50);
+    border-radius: 6px;
+    padding: 10px 12px;
+  }
+
+  /* ===== Strategies / Touchpoint grid ===== */
+  .strategies {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .strat {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 22px 22px 20px;
+    position: relative;
+  }
+  .strat-num {
+    position: absolute;
+    top: 14px; right: 18px;
+    font-size: 42px;
+    font-weight: 700;
+    color: var(--gold-soft);
+    opacity: 0.55;
+    line-height: 1;
+    font-family: Georgia, serif;
+  }
+  .strat-title {
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 10px;
+    padding-right: 40px;
+  }
+  .strat-body {
+    font-size: 13.5px;
+    color: var(--gray-500);
+    line-height: 1.75;
+  }
+  .strat-body b { color: var(--navy); font-weight: 600; }
+
+  /* ===== Objection cards (re-using risk styling) ===== */
+  .risks {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .risk {
+    background: var(--white);
+    border: 1px solid #F0D9D9;
+    border-top: 3px solid var(--red);
+    border-radius: 8px;
+    padding: 20px 22px;
+  }
+  .risk-label {
+    font-size: 11px;
+    color: var(--red);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    margin-bottom: 6px;
+  }
+  .risk-title {
+    font-size: 15.5px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .risk-body {
+    font-size: 13.5px;
+    color: var(--gray-500);
+    line-height: 1.75;
+    margin-bottom: 10px;
+  }
+  .risk-impact {
+    background: var(--green-bg);
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 12.5px;
+    color: #2A5A3E;
+    line-height: 1.65;
+  }
+  .risk-impact b { color: var(--green); font-weight: 600; }
+
+  /* ===== Suitability (yes/no checklist) ===== */
+  .suit {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .suit-col {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 24px 26px;
+  }
+  .suit-col.yes {
+    background: linear-gradient(160deg, var(--green-bg) 0%, var(--white) 70%);
+    border-color: #B5D7C5;
+  }
+  .suit-col.no {
+    background: linear-gradient(160deg, var(--red-bg) 0%, var(--white) 70%);
+    border-color: #F0D9D9;
+  }
+  .suit-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .suit-col.yes .suit-title { color: var(--green); }
+  .suit-col.no .suit-title { color: var(--red); }
+  .suit-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .suit-list li {
+    font-size: 13.5px;
+    padding: 8px 0 8px 26px;
+    position: relative;
+    border-bottom: 1px dashed var(--gray-200);
+    color: var(--gray-700);
+    line-height: 1.65;
+  }
+  .suit-list li:last-child { border-bottom: none; }
+  .suit-list li::before {
+    position: absolute;
+    left: 4px;
+    top: 8px;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .suit-col.yes .suit-list li::before { content: "✓"; color: var(--green); }
+  .suit-col.no .suit-list li::before { content: "✕"; color: var(--red); }
+
+  /* ===== Mode toggle (sticky) ===== */
+  .mode-toggle-wrap {
+    position: sticky;
+    top: 12px;
+    z-index: 20;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .mode-toggle {
+    display: inline-flex;
+    background: var(--white);
+    border: 1.5px solid var(--gray-200);
+    border-radius: 999px;
+    padding: 4px;
+    box-shadow: 0 4px 14px rgba(11,37,69,0.08);
+  }
+  .mode-btn {
+    border: none;
+    background: transparent;
+    padding: 7px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-500);
+    cursor: pointer;
+    transition: all .15s ease;
+    font-family: inherit;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .mode-btn:hover { color: var(--navy); }
+  .mode-btn.active {
+    background: var(--navy);
+    color: var(--gold-soft);
+    cursor: default;
+  }
+  .mode-btn.active.ifa { background: var(--purple); color: var(--white); }
+
+  /* ===== IFA mode gate (hidden by default) ===== */
+  [data-audience="ifa"] { display: none; }
+  body.ifa-mode [data-audience="ifa"] { display: block; }
+  body.ifa-mode [data-audience="ifa"].inline { display: inline; }
+  body.ifa-mode [data-audience="ifa"].grid { display: grid; }
+  body.ifa-mode [data-audience="ifa"].flex { display: flex; }
+
+  /* Customer mode shows customer label; IFA mode hides it when IFA content is dominant */
+  body.ifa-mode .stage-customer-only { opacity: 0.55; }
+
+  /* ===== Script box (IFA only) ===== */
+  .script-box {
+    background: var(--purple-bg);
+    border: 1px solid #D4C5F0;
+    border-left: 4px solid var(--purple);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-top: 14px;
+  }
+  .script-box-label {
+    display: inline-block;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--purple);
+    font-weight: 700;
+    margin-bottom: 8px;
+    background: rgba(91,62,153,0.12);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+  .script-box h4 {
+    font-size: 14.5px;
+    color: var(--navy);
+    margin: 6px 0 10px;
+    font-weight: 600;
+  }
+  .script-box p {
+    font-size: 13.5px;
+    color: var(--gray-700);
+    line-height: 1.75;
+    margin: 6px 0;
+  }
+  .script-box .quote {
+    background: var(--white);
+    border-left: 3px solid var(--purple);
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: italic;
+    color: var(--navy);
+    border-radius: 0 6px 6px 0;
+    font-size: 13.5px;
+  }
+  .script-box ul { margin: 6px 0; padding-left: 22px; }
+  .script-box li { font-size: 13.5px; color: var(--gray-700); line-height: 1.75; margin: 3px 0; }
+  .script-box b { color: var(--navy); }
+
+  /* ===== Touchpoint (vertical follow-up timeline) ===== */
+  .touchpoints {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative;
+    margin-left: 24px;
+  }
+  .touchpoints::before {
+    content: "";
+    position: absolute;
+    left: -16px; top: 12px; bottom: 12px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--gold) 0%, var(--navy) 50%, var(--green) 100%);
+    border-radius: 1px;
+  }
+  .touchpoint {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 18px 22px;
+    position: relative;
+  }
+  .touchpoint::before {
+    content: "";
+    position: absolute;
+    left: -23px; top: 26px;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 3px solid var(--navy);
+  }
+  .touchpoint.gold::before { border-color: var(--gold); background: var(--gold-bg); }
+  .touchpoint.green::before { border-color: var(--green); background: var(--green-bg); }
+  .tp-header {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+  .tp-time {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .tp-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .tp-goal {
+    font-size: 13.5px;
+    color: var(--gray-500);
+    line-height: 1.7;
+    margin: 4px 0 0;
+  }
+  .tp-badge {
+    display: inline-block;
+    background: var(--gold-bg);
+    color: var(--amber);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-left: 8px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ===== Discovery "Scoring" badge ===== */
+  .fit-score {
+    background: var(--navy-light);
+    border: 1px solid #C5D4E5;
+    border-radius: 8px;
+    padding: 14px 20px;
+    margin-top: 14px;
+    font-size: 13.5px;
+    color: var(--navy);
+    line-height: 1.75;
+  }
+  .fit-score b { color: var(--navy); }
+
+  /* ===== Demo CTA buttons ===== */
+  .demo-cta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 16px 0 8px;
+  }
+  .demo-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: linear-gradient(135deg, var(--gold-bg) 0%, var(--white) 70%);
+    border: 1.5px solid var(--gold-soft);
+    border-radius: 10px;
+    padding: 22px 26px;
+    text-decoration: none;
+    color: inherit;
+    transition: all .15s ease;
+  }
+  .demo-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(201,169,97,0.25);
+    border-color: var(--gold);
+  }
+  .demo-cta-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+  .demo-cta-sub {
+    font-size: 13px;
+    color: var(--gray-500);
+    line-height: 1.6;
+  }
+  .demo-cta-arrow {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  /* ===== Expectation badges ===== */
+  .exp-badges {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .exp-badge {
+    background: var(--gray-50);
+    border: 1px dashed var(--gray-300);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+  .exp-badge b { color: var(--navy); font-weight: 600; }
+
+  /* ===== Close techniques (IFA) ===== */
+  .close-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  .close-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-left: 3px solid var(--purple);
+    border-radius: 8px;
+    padding: 14px 18px;
+    font-size: 13.5px;
+  }
+  .close-card b { color: var(--purple); display: block; margin-bottom: 4px; font-size: 12.5px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  /* ===== Closing ===== */
+  .closing {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+    color: var(--white);
+    border-radius: 12px;
+    padding: 32px 36px;
+    text-align: center;
+  }
+  .closing h3 {
+    font-size: 20px;
+    color: var(--gold-soft);
+    margin: 0 0 14px;
+    font-weight: 600;
+  }
+  .closing p {
+    font-size: 14.5px;
+    color: rgba(255,255,255,0.82);
+    max-width: 760px;
+    margin: 0 auto 10px;
+    line-height: 1.8;
+  }
+  .closing .sign {
+    margin-top: 18px;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.06em;
+  }
+
+  /* ===== Footer ===== */
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray-500);
+    margin-top: 34px;
+    padding-top: 20px;
+    border-top: 1px solid var(--gray-200);
+  }
+
+  /* ===== Cross-page navigation ===== */
+  .page-nav {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+  }
+  .nav-btn {
+    flex: 1;
+    min-width: 200px;
+    padding: 11px 18px;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all .15s ease;
+  }
+  .nav-btn:hover {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(11,37,69,0.15);
+  }
+  .nav-btn.active {
+    background: var(--navy);
+    color: var(--gold);
+    border-color: var(--navy);
+    cursor: default;
+  }
+  .nav-btn.active:hover {
+    transform: none;
+    box-shadow: none;
+    background: var(--navy);
+    color: var(--gold);
+  }
+  .nav-btn .arrow { font-weight: 700; }
+
+  /* ===== Cross-page CTA ===== */
+  .cross-cta {
+    margin: 28px 0 18px 0;
+    padding: 20px 24px;
+    background: linear-gradient(135deg, var(--gold-bg) 0%, var(--white) 100%);
+    border: 1.5px solid var(--gold-soft);
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .cross-cta-text { flex: 1; min-width: 220px; }
+  .cross-cta-title { font-size: 16px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .cross-cta-desc { font-size: 13.5px; color: var(--gray-500); line-height: 1.55; }
+  .cross-cta-btn {
+    padding: 12px 22px;
+    background: var(--navy);
+    color: var(--white);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all .15s ease;
+  }
+  .cross-cta-btn:hover {
+    background: var(--gold);
+    color: var(--navy);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(11,37,69,0.18);
+  }
+
+  /* ===== Responsive ===== */
+  @media (max-width: 900px) {
+    .strategies { grid-template-columns: repeat(2, 1fr); }
+    .tl-points { grid-template-columns: 1fr 1fr; }
+    .tl-line { display: none; }
+    .demo-cta-grid { grid-template-columns: 1fr; }
+    .close-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 640px) {
+    .page { padding: 20px 16px 60px; }
+    .hero { padding: 28px 24px; }
+    .hero h1 { font-size: 26px; }
+    .hero-qs { grid-template-columns: 1fr; }
+    .strategies { grid-template-columns: 1fr; }
+    .risks { grid-template-columns: 1fr; }
+    .suit { grid-template-columns: 1fr; }
+    .tl-points { grid-template-columns: 1fr; }
+    .exp-badges { grid-template-columns: 1fr; }
+    .touchpoints { margin-left: 20px; }
+  }
+
+  /* ===== Print ===== */
+  @media print {
+    body { background: var(--white); font-size: 11pt; }
+    .page { max-width: none; padding: 0; }
+    .hero, .closing {
+      background: var(--navy) !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      page-break-after: avoid;
+    }
+    section { page-break-inside: avoid; margin-bottom: 24px; }
+    .card, .risk, .strat, .suit-col, .timeline, .script-box, .touchpoint, .demo-cta {
+      box-shadow: none !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .page-nav, .cross-cta, .mode-toggle-wrap { display: none !important; }
+    @page { size: A4; margin: 14mm; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ========== CROSS-PAGE NAV ========== -->
+  <nav class="page-nav">
+    <a href="保費融資原理與風險.html" class="nav-btn">📘 保費融資原理與風險 <span class="arrow">→</span></a>
+    <a href="保費融資模擬器.html" class="nav-btn">🎛️ 互動模擬器 <span class="arrow">→</span></a>
+    <a class="nav-btn active">🗺️ 銷售流程 · 當前頁</a>
+  </nav>
+
+  <!-- ========== MODE TOGGLE ========== -->
+  <div class="mode-toggle-wrap">
+    <div class="mode-toggle" role="tablist" aria-label="檢視模式">
+      <button class="mode-btn active" id="mode-customer" role="tab" aria-selected="true">👤 客戶模式</button>
+      <button class="mode-btn ifa" id="mode-ifa" role="tab" aria-selected="false">💼 IFA 模式</button>
+    </div>
+  </div>
+
+  <!-- ========== HERO ========== -->
+  <div class="hero">
+    <div class="hero-top">
+      <span class="hero-badge">銷售流程 · Sales Playbook</span>
+      <span class="hero-date">客戶旅程 + IFA 指引</span>
+    </div>
+    <h1>保費融資銷售流程</h1>
+    <p class="hero-sub">由 Discovery 到 10 年跟進 —— 俾客戶透明睇清楚每一步會發生乜,同時俾 IFA 一份可以直接用嘅 playbook。默認係客戶視角,IFA 按右上角切換解鎖 script / 異議處理 / close 技巧。</p>
+    <div class="hero-qs">
+      <div class="hero-q"><b>搵得啱人</b> · 6 條自我檢查 + 8 條深入發掘</div>
+      <div class="hero-q"><b>演示得清</b> · 概念 + 試算 + 壓力測試</div>
+      <div class="hero-q"><b>跟進得實</b> · 10 年 touchpoint roadmap</div>
+    </div>
+  </div>
+
+  <!-- ========== STAGE OVERVIEW TIMELINE ========== -->
+  <section>
+    <div class="section-title">
+      <h2>四個階段 ── 一眼望清整個流程</h2>
+      <span class="en">Four-Stage Sales Cycle</span>
+    </div>
+    <div class="timeline">
+      <div class="tl-track">
+        <div class="tl-line"></div>
+        <div class="tl-points">
+          <div class="tl-point" data-scroll="stage-1">
+            <div class="tl-dot"></div>
+            <div class="tl-year">第 1 週</div>
+            <div class="tl-title">發掘需求</div>
+            <div class="tl-body">確認客戶適合性 · 了解真正財務目標</div>
+          </div>
+          <div class="tl-point" data-scroll="stage-2">
+            <div class="tl-dot"></div>
+            <div class="tl-year">第 2-3 週</div>
+            <div class="tl-title">教育 + 演示</div>
+            <div class="tl-body">講解原理 · 用模擬器演示客戶嘅實際數字</div>
+          </div>
+          <div class="tl-point" data-scroll="stage-3">
+            <div class="tl-dot"></div>
+            <div class="tl-year">第 3-4 週</div>
+            <div class="tl-title">異議 + 成交</div>
+            <div class="tl-body">處理擔憂 · 取得承諾 · 約 banker appointment</div>
+          </div>
+          <div class="tl-point" data-scroll="stage-4">
+            <div class="tl-dot"></div>
+            <div class="tl-year">簽單後 → 10 年</div>
+            <div class="tl-title">持續跟進</div>
+            <div class="tl-body">6 個關鍵 touchpoint · referral 機會窗口</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STAGE 1: DISCOVERY ========== -->
+  <section id="stage-1">
+    <div class="section-title">
+      <h2>Stage 1 · 發掘需求</h2>
+      <span class="en">Discovery — Who is this for?</span>
+      <span class="stage-num">01 / 04</span>
+    </div>
+
+    <div class="card" style="margin-bottom: 18px;">
+      <p class="lead">
+        保費融資唔係「人人啱」嘅方案。<b>Stage 1 嘅目標係篩選出 fit 嘅客戶</b> —— 而唔係見到客戶就硬銷。先做好呢一步,後面嘅 conversation 會流暢好多。
+      </p>
+    </div>
+
+    <!-- Customer view: self-check suitability -->
+    <div class="suit">
+      <div class="suit-col yes">
+        <div class="suit-title">✅ 你適合考慮保費融資</div>
+        <ul class="suit-list">
+          <li>有 USD 200,000 或以上可以長期(10 年+)閒置嘅資金</li>
+          <li>持有其他流動資產作為應急 buffer(唔係乜都 lock 埋)</li>
+          <li>心理上可以承受 HIBOR 利率短期上落波動</li>
+          <li>理解「非保證分紅」<b>可能低於</b>計劃書假設</li>
+          <li>有稅務規劃、財富傳承、或中長期儲蓄目標</li>
+          <li>年齡符合保險公司核保條件(通常 ≤65 歲)</li>
+        </ul>
+      </div>
+      <div class="suit-col no">
+        <div class="suit-title">❌ 保費融資未必適合你</div>
+        <ul class="suit-list">
+          <li>近期(5 年內)需要動用呢筆資金</li>
+          <li>對利率波動極度敏感、瞓唔着</li>
+          <li>投資期只可以承受 3-5 年</li>
+          <li>目前資產組合已經冇多餘現金流做 buffer</li>
+          <li>心理上抗拒任何形式嘅借貸</li>
+          <li>年齡或健康狀況未能通過保險核保</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- IFA view: SPIN-style discovery questions -->
+    <div data-audience="ifa">
+      <div class="script-box">
+        <span class="script-box-label">💼 IFA · Discovery Script</span>
+        <h4>8 條 SPIN 發掘問題(由淺入深)</h4>
+        <p><b>S — Situation(了解背景)</b></p>
+        <div class="quote">「你目前嘅理財組合主要係咩 asset class? 現金、定存、股票、物業,大概點分?」</div>
+        <div class="quote">「你習慣每年撥幾多比例做儲蓄或投資?」</div>
+
+        <p style="margin-top: 14px;"><b>P — Problem(揭示痛點)</b></p>
+        <div class="quote">「你覺得而家 bank rate 或定存嘅回報,追得上通脹嗎?」</div>
+        <div class="quote">「如果有一筆資金閒置 10 年,你會選擇點樣部署?」</div>
+
+        <p style="margin-top: 14px;"><b>I — Implication(放大後果)</b></p>
+        <div class="quote">「如果 10 年後呢筆錢追唔到通脹,會影響你個退休計劃嗎?」</div>
+        <div class="quote">「你對子女教育、父母醫療、或者下一代傳承有冇未雨綢繆嘅諗法?」</div>
+
+        <p style="margin-top: 14px;"><b>N — Need-payoff(引入方案)</b></p>
+        <div class="quote">「如果有個方法可以令你嘅資金效率提升 3-4 倍,同時唔需要 lock 死全部本金,有興趣了解嗎?」</div>
+        <div class="quote">「你希望 10 年後呢筆資金做到幾多目標回報? 5%? 8%?」</div>
+
+        <h4 style="margin-top: 16px;">Fit 度評分原則</h4>
+        <ul>
+          <li><b>5-6 項 yes</b> → 直接進入 Stage 2 教育演示</li>
+          <li><b>3-4 項 yes</b> → 先澄清猶豫點(通常係利率或時間),再決定進 Stage 2 定轉介傳統產品</li>
+          <li><b>0-2 項 yes</b> → 建議佢做傳統儲蓄保,唔好強推;保持關係等 timing</li>
+        </ul>
+      </div>
+
+      <div class="fit-score">
+        <b>💡 Pro tip</b>:Discovery 階段**唔好**急住演示數字。如果客戶未搞清楚自己點解要做呢單嘢,後面嘅 IRR 再靚都守唔住。用<b>問題</b>引客戶自己講出<b>答案</b>,遠好過你 monologue 解釋方案幾好。
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STAGE 2: EDUCATION + DEMO ========== -->
+  <section id="stage-2">
+    <div class="section-title">
+      <h2>Stage 2 · 教育 + 方案演示</h2>
+      <span class="en">Education + Live Demo</span>
+      <span class="stage-num">02 / 04</span>
+    </div>
+
+    <div class="card" style="margin-bottom: 18px;">
+      <p class="lead">
+        客戶已確認有興趣,Stage 2 嘅目標係<b>同客戶 co-build 一個屬於佢嘅方案</b>。<span class="hl">唔係派份 brochure</span>,而係一齊打開模擬器、改參數、睇實際數字。呢個互動過程本身就係最好嘅成交前奏。
+      </p>
+    </div>
+
+    <!-- Customer view: direct CTA to two sister pages -->
+    <div class="demo-cta-grid">
+      <a href="保費融資原理與風險.html" class="demo-cta">
+        <div class="demo-cta-title">📘 睇運作原理</div>
+        <div class="demo-cta-sub">三方關係、套利邏輯、槓桿原理、8 大風險全面披露 —— 約 8 分鐘閱讀</div>
+        <div class="demo-cta-arrow">前往教學頁 →</div>
+      </a>
+      <a href="保費融資模擬器.html" class="demo-cta">
+        <div class="demo-cta-title">🎛️ 試算你嘅 case</div>
+        <div class="demo-cta-sub">拖動 5 個參數(保費、折扣、實現率、HIBOR、抵消),即時睇三情景 IRR 變化</div>
+        <div class="demo-cta-arrow">打開模擬器 →</div>
+      </a>
+    </div>
+
+    <div class="exp-badges">
+      <div class="exp-badge"><b>會了解</b><br>借銀行錢買保險背後嘅套利邏輯</div>
+      <div class="exp-badge"><b>會睇到</b><br>你嘅首期、月息、10 年 IRR 嘅具體數字</div>
+      <div class="exp-badge"><b>會明白</b><br>8 大風險點樣影響回報,以及點樣應對</div>
+    </div>
+
+    <!-- IFA view: 6-step demo script -->
+    <div data-audience="ifa">
+      <div class="script-box">
+        <span class="script-box-label">💼 IFA · Demo 順序 Script(6 步)</span>
+        <h4>建議流程:先原理,再數字,最後壓測</h4>
+
+        <p style="margin-top: 10px;"><b>Step 1</b> · 一齊讀《原理》§1-2(3 分鐘「一分鐘理解」+ 5 分鐘「套利邏輯」)</p>
+        <div class="quote">「呢度講明點樣運作 —— 同你理解架構嘅前提係同樣嗎?」</div>
+        <p style="font-size: 12.5px; color: var(--gray-500); margin: 4px 0 0;">暫時<b>唔好</b>跳去 §6 風險 —— 先建立 positive framing。</p>
+
+        <p style="margin-top: 14px;"><b>Step 2</b> · 開模擬器,改「基本金額」去客戶實際保費 size</p>
+        <div class="quote">「我哋試下用你實際考慮嘅 size 嚟計 —— 你諗住大約投資幾多? USD 380K? 500K? 1M?」</div>
+
+        <p style="margin-top: 14px;"><b>Step 3</b> · 展示 baseline(5x 槓桿 / ~9.4% IRR / ~20% 首期)</p>
+        <div class="quote">「你睇 —— 佢只需你出 20% 首期,但 10 年可以拎到 ~9.4% IRR。記住呢個數字,陣間我哋會試下唔同 scenario。」</div>
+
+        <p style="margin-top: 14px;"><b>Step 4 · ⚠️ 壓力測試(最重要!主動暴露風險)</b></p>
+        <div class="quote">「好多人會問『萬一 HIBOR 升呢?』我哋而家試下拖到 +3% 會點。你睇,IRR 由 9.4% 跌到……」</div>
+        <p style="font-size: 12.5px; color: var(--gray-500); margin: 4px 0 0;"><b>關鍵心法</b>:IFA<b>主動</b>講比客戶<b>被迫回答</b>好 10 倍 —— 顯示你冇隱藏,信任直接建立。</p>
+
+        <p style="margin-top: 14px;"><b>Step 5</b> · 展示 offset 對策(正面應對)</p>
+        <div class="quote">「我哋有個 tool 可以對沖 ——『存款抵消』。拖 offset 到 50%,你睇利息點減半,IRR 回升到……」</div>
+
+        <p style="margin-top: 14px;"><b>Step 6</b> · 對比 anchor(不融資情景)</p>
+        <div class="quote">「最後拖返 100% realization,睇返 baseline。旁邊『不使用融資』只有 5.6% —— 你覺得呢 3.8 個百分點嘅差距,值唔值得用呢個槓桿方案?」</div>
+      </div>
+
+      <div class="script-box" style="margin-top: 14px;">
+        <span class="script-box-label">🎯 Trial close(Step 6 尾)</span>
+        <p>客戶睇完數字,**唔好**問「OK 未?」—— 太抽象。具體啲問:</p>
+        <div class="quote">「睇完呢組數字同壓力測試,你目前最擔心嘅會係利率,定係分紅實現率?」</div>
+        <p style="font-size: 12.5px; color: var(--gray-500);">呢個問法假設咗<b>已有興趣</b>,焦點轉去具體擔憂 → 自然過渡 Stage 3 異議處理。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STAGE 3: OBJECTION + CLOSE ========== -->
+  <section id="stage-3">
+    <div class="section-title">
+      <h2>Stage 3 · 異議處理 + 成交</h2>
+      <span class="en">Objection Handling + Close</span>
+      <span class="stage-num">03 / 04</span>
+    </div>
+
+    <div class="card" style="margin-bottom: 18px;">
+      <p class="lead">
+        客戶睇完模擬器必然有疑問 —— 呢個係<b>好事</b>,代表佢認真考慮緊。Stage 3 目標係逐條處理擔憂,然後取得 verbal commit 去約 banker appointment。
+      </p>
+    </div>
+
+    <!-- Customer view: 8 common concerns, simple reassurance -->
+    <div class="risks">
+      <div class="risk">
+        <div class="risk-label">擔憂 01</div>
+        <div class="risk-title">HIBOR 會點走? 利息會跳升嗎?</div>
+        <div class="risk-body">過去十多年 HIBOR 大致喺 0-5% 區間波動。萬一真係急升,HKD 貸款設有<b>利率上限</b>(典型為 4.75%),而且可以部分贖回或加存款抵消減低負擔。</div>
+        <div class="risk-impact"><b>應對工具</b>:利率上限 + 存款抵消 + 部分贖回 + 提早退保選項</div>
+      </div>
+
+      <div class="risk">
+        <div class="risk-label">擔憂 02</div>
+        <div class="risk-title">10 年投資期太長?</div>
+        <div class="risk-body">其實 Y5 已經開始有正 IRR(約 6.9%)。你唔一定要捱足 10 年 —— 但越遲退保,IRR 越高。10 年係個<b>最佳目標</b>唔係<b>強制年期</b>。</div>
+        <div class="risk-impact"><b>彈性</b>:Y5 可出、Y6-Y9 可出、Y10+ 可續期繼續滾存</div>
+      </div>
+
+      <div class="risk">
+        <div class="risk-label">擔憂 03</div>
+        <div class="risk-title">萬一銀行 margin call?</div>
+        <div class="risk-body">Day 1 銀行只借<b>退保價值嘅 90%</b>,即保留 10% buffer。一般情景下退保價值會隨年增長,buffer 越拉越闊。真遇到 margin call 可以 top-up 現金或部分贖回應對。</div>
+        <div class="risk-impact"><b>預防</b>:保留 10-20% 流動 buffer · 定期 review CV / loan ratio</div>
+      </div>
+
+      <div class="risk">
+        <div class="risk-label">擔憂 04</div>
+        <div class="risk-title">分紅實現率跌我點算?</div>
+        <div class="risk-body">即使非保證分紅實現率跌到 0%,<b>保證現金值</b>部分仍然有約 1.7% IRR —— 唔會本金全輸。而且香港大型保險公司過去十年多數能維持 90%+ 實現率。</div>
+        <div class="risk-impact"><b>底線</b>:保證 CV ≈ 1.7% IRR(最壞情景)· 查閱保險公司 dividend 履歷</div>
+      </div>
+
+      <div class="risk">
+        <div class="risk-label">擔憂 05</div>
+        <div class="risk-title">保險公司出事點算?</div>
+        <div class="risk-body">香港保險業由<b>保險業監管局(IA)</b>監管,資本充足率有嚴格要求。亦有《保單持有人保障計劃》(Policyholders' Protection Scheme,相關立法詳情以實際實施為準)作額外保障。揀大型、信用評級高嘅保險公司能降低呢個風險。</div>
+        <div class="risk-impact"><b>篩選原則</b>:A- 或以上評級 · 香港市場份額穩定 · 過往理賠紀錄良好</div>
+      </div>
+
+      <div class="risk">
+        <div class="risk-label">擔憂 06</div>
+        <div class="risk-title">USD:HKD 匯率風險?</div>
+        <div class="risk-body">HKD 透過<b>聯繫匯率制度</b>掛鈎 USD(7.75-7.85),自 1983 年實施以來相對穩定。呢個計劃嘅保費、退保、貸款、利息大部分以 USD 結算,匯率波動嘅實質影響有限。</div>
+        <div class="risk-impact"><b>對沖方式</b>:保費同退保同以 USD 結算,自然對沖</div>
+      </div>
+
+      <div class="risk">
+        <div class="risk-label">擔憂 07</div>
+        <div class="risk-title">萬一中途要錢,退保有冇罰?</div>
+        <div class="risk-body">週年內(Y1 內)取消需要支付透支額度 <b>1%</b> 嘅手續費;Y2 之後免。提早 1 個月通知銀行亦可豁免。Y5 之後退保淨值已正,越遲退保賺得越多。</div>
+        <div class="risk-impact"><b>靈活性</b>:Y1 罰 1% · Y2+ 免罰 · Y5+ 已有正回報</div>
+      </div>
+
+      <div class="risk">
+        <div class="risk-label">擔憂 08</div>
+        <div class="risk-title">實際流程點入帳? 流程會唔會好複雜?</div>
+        <div class="risk-body">全程由 IFA 協調:你簽意向書 → 銀行 KYC + 保險核保(約 3-6 週)→ 批核後銀行直接將貸款轉入保險公司 → 你只需出首期及每月利息。你唔會摸到貸款嘅現金,減少誤用風險。</div>
+        <div class="risk-impact"><b>你要做嘅嘢</b>:提供身分同財務文件 · 做一次銀行 KYC 面談 · 保險 medical(如需要)</div>
+      </div>
+    </div>
+
+    <!-- IFA view: full rebuttal scripts + close techniques -->
+    <div data-audience="ifa">
+      <div class="script-box">
+        <span class="script-box-label">💼 IFA · 異議處理萬用 Framework</span>
+        <h4>LAR-Q(Listen → Acknowledge → Reframe → Quantify → Question)</h4>
+        <p><b>L · Listen</b> — 客戶講完完整 concern,<b>唔好打斷</b>。即使你聽過 100 次相同問題。</p>
+        <p><b>A · Acknowledge</b> — 「呢個擔心好正常,我解釋俾你聽……」</p>
+        <p><b>R · Reframe</b> — 將焦點由 worst case 轉去結構性保護</p>
+        <p><b>Q · Quantify</b> — 用具體數字量化影響,**唔係**「應該冇事」</p>
+        <p><b>Q · Question</b> — 反問客戶係咪釋除咗呢個疑慮,順勢過渡下個話題</p>
+      </div>
+
+      <div class="script-box" style="margin-top: 14px;">
+        <span class="script-box-label">💬 高頻異議完整 rebuttal 範例</span>
+        <h4>「HIBOR 升到 5% 點算?」</h4>
+        <p><b>L</b> — 聽完,唔打斷。</p>
+        <p><b>A</b> — 「呢個擔心好實際,特別係 2022 加息周期之後。」</p>
+        <p><b>R</b> — 「我哋睇下架構 ——(打開模擬器)我拖 HIBOR +3% 睇下。IRR 跌到 XX%,仍然係正嘅。而且 HKD 貸款有利率上限保護,唔會無上限升。」</p>
+        <p><b>Q</b> — 「加埋你可以隨時加存款抵消 offset,睇(拖 50%)利息再減半。即係話<b>你係有 tool 可以對沖</b>嘅,唔係被動接受。」</p>
+        <p><b>Q</b> — 「咁利率呢個部分,你而家點睇? 仲係主要擔憂嗎?」</p>
+      </div>
+
+      <div class="script-box" style="margin-top: 14px;">
+        <span class="script-box-label">🎯 4 種 Close 技巧</span>
+        <div class="close-grid">
+          <div class="close-card">
+            <b>Assumptive Close</b>
+            「咁我哋下星期約 banker 坐低傾 KYC?你 Mon / Wed 嚟方便?」
+          </div>
+          <div class="close-card">
+            <b>Alternative Close</b>
+            「你想先做 USD 380K(10% 折扣),定 500K(11% 折扣)? 後者多 1% 折扣,Day 1 buffer 好啲。」
+          </div>
+          <div class="close-card">
+            <b>Urgency Close</b>
+            「而家 HIBOR 相對低,lock 住 spread 有優勢 —— 如果等 rate 再升先做,就 cover 唔到成本嘅安全邊際。」
+          </div>
+          <div class="close-card">
+            <b>Summary Close</b>
+            「總括一次 —— 首期 USD 68K、月息 HKD 6K、10 年目標 9.4% IRR、最壞保證 1.7%。你 OK 嘅話,我哋可以今日就簽 Statement of Intent。」
+          </div>
+        </div>
+      </div>
+
+      <div class="fit-score" style="margin-top: 14px;">
+        <b>💡 取得 verbal commit 嘅信號</b>:客戶開始問「幾時可以做」「要交啲乜文件」「可以預約 banker 嗎」—— 呢啲就係<b>成交信號</b>。立刻轉入 Stage 4 流程,唔好再繼續賣嘢(over-selling 最傷)。
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== STAGE 4: FOLLOW-UP ========== -->
+  <section id="stage-4">
+    <div class="section-title">
+      <h2>Stage 4 · 成交後跟進</h2>
+      <span class="en">Close → 10-Year Follow-Up</span>
+      <span class="stage-num">04 / 04</span>
+    </div>
+
+    <div class="card" style="margin-bottom: 18px;">
+      <p class="lead">
+        <b>成交唔係終點</b> —— 係關係嘅起點。呢個方案會陪住客戶 10 年,每個 touchpoint 都係 reinforcement 同 referral 嘅機會。計劃式 follow-up > 出事先走出嚟。
+      </p>
+    </div>
+
+    <!-- Customer view: client-facing timeline -->
+    <div class="touchpoints">
+      <div class="touchpoint gold">
+        <div class="tp-header">
+          <span class="tp-time">簽約後 Day 0-7</span>
+          <span class="tp-title">簽 Statement of Intent</span>
+        </div>
+        <p class="tp-goal">正式啟動申請程序。IFA 會陪同你填意向書,並列出後續需要準備嘅文件清單(身分證明、財務證明、地址證明等)。</p>
+      </div>
+
+      <div class="touchpoint">
+        <div class="tp-header">
+          <span class="tp-time">第 1-3 週</span>
+          <span class="tp-title">銀行 KYC + 保險核保</span>
+        </div>
+        <p class="tp-goal">銀行安排面談(通常 1 次,~1 小時)。保險公司根據保費 size 決定是否需要 medical underwriting。IFA 協調整個流程。</p>
+      </div>
+
+      <div class="touchpoint">
+        <div class="tp-header">
+          <span class="tp-time">第 3-6 週</span>
+          <span class="tp-title">銀行批核 + 保險簽發</span>
+        </div>
+        <p class="tp-goal">雙方審批獨立進行。銀行批出貸款額度,保險公司發出保單正本。IFA 會同你 review 兩份條款,確保理解每項條件。</p>
+      </div>
+
+      <div class="touchpoint green">
+        <div class="tp-header">
+          <span class="tp-time">保單 Day 1</span>
+          <span class="tp-title">資金流動 · 保單正式生效</span>
+        </div>
+        <p class="tp-goal">銀行將貸款直接轉入保險公司賬戶 → 保單正式生效 → 你存入首期 + 第一期利息。全程你唔需要摸現金,流程透明。</p>
+      </div>
+
+      <div class="touchpoint">
+        <div class="tp-header">
+          <span class="tp-time">Month 1 / 3 / 6</span>
+          <span class="tp-title">IFA 初期 check-in</span>
+        </div>
+        <p class="tp-goal">確認入賬正確、月息扣數順利、掌握 HIBOR 走勢。半年時保險公司通常會公布當年分紅實現率,IFA 會第一時間同你 review。</p>
+      </div>
+
+      <div class="touchpoint gold">
+        <div class="tp-header">
+          <span class="tp-time">Year 1 / 3 / 5 / 10</span>
+          <span class="tp-title">年度 Policy Review</span>
+        </div>
+        <p class="tp-goal">每年正式 review 一次 CV 增長、loan ratio、分紅趨勢、整體 IRR 軌跡。Year 5 起開始討論 exit strategy(退保 vs 繼續持有 vs 續期)。</p>
+      </div>
+    </div>
+
+    <!-- IFA view: what to actually do at each touchpoint -->
+    <div data-audience="ifa">
+      <div class="script-box">
+        <span class="script-box-label">💼 IFA · 每個 Touchpoint 嘅實際 Checklist</span>
+
+        <h4>Month 1 — 防漏洞</h4>
+        <ul>
+          <li>確認保單入賬正確(USD amount + effective date)</li>
+          <li>確認 loan 已正確 fund 到保險公司</li>
+          <li>客戶收到第一張月息單,解釋一次清楚</li>
+          <li>Send 一個簡短 "welcome to your plan" email / WhatsApp,附上模擬器 link 方便佢之後自己睇</li>
+        </ul>
+
+        <h4 style="margin-top: 14px;">Month 3 — HIBOR trend 提示</h4>
+        <ul>
+          <li>同客戶分享當前 HIBOR + 未來 Fed 展望</li>
+          <li>如果利率升緊,主動建議「加存款抵消 offset」</li>
+          <li>如果利率跌緊,reassure「你已鎖低 spread,而家冇憂慮」</li>
+        </ul>
+
+        <h4 style="margin-top: 14px;">Month 6 — ⭐ Referral Moment #1</h4>
+        <ul>
+          <li>保險公司公布當年分紅實現率 → IFA 主動同客戶 review</li>
+          <li>客戶見到方案運作順暢,<b>信心最高點</b></li>
+          <li>Soft ask:「有冇身邊朋友 / 親戚有類似理財目標?我可以俾佢哋一份原理 + 模擬器 link 自己睇,有興趣我先跟進。」</li>
+          <li>善用 3 份 HTML 檔:原理頁 + 模擬器 + 呢個銷售流程頁。客戶可以直接 forward 呢三條 URL 俾朋友</li>
+        </ul>
+
+        <h4 style="margin-top: 14px;">Year 1 — ⭐ Referral Moment #2 + Top-up 評估</h4>
+        <ul>
+          <li>第一年完整 review(IRR trajectory vs 計劃書)</li>
+          <li>評估是否加 AUM 到透支戶口抵消利息(如果客戶流動資金有餘)</li>
+          <li>如果客戶情況有變(加薪、賣物業、繼承),提出 top-up 或新一單 scenario</li>
+          <li>Referral ask #2:第二次機會,成功率通常高過 Month 6</li>
+        </ul>
+
+        <h4 style="margin-top: 14px;">Year 5 — Exit strategy 開始討論</h4>
+        <ul>
+          <li>已開始正 IRR(~6.9%),客戶可以有意義噉考慮退保</li>
+          <li>計算:完全退 vs 部分退 vs 續期持有 vs 贖回部分 loan</li>
+          <li>如果客戶財務狀況改變,可能 Y5 partial surrender 滿足短期需要</li>
+          <li>重要:呢個時候<b>唔好強推繼續持有</b> —— 客戶信任來自你以客戶利益為先</li>
+        </ul>
+
+        <h4 style="margin-top: 14px;">Year 10 — Target exit 或續期</h4>
+        <ul>
+          <li>達到目標 IRR 附近(~9.4%),客戶決定 exit 或續期</li>
+          <li>Exit:協助退保、還貸、收取淨現金</li>
+          <li>續期:discuss 新一輪保費融資(通常更大 size,因為客戶已有經驗)—— 呢個係最大價值嘅 renewal opportunity</li>
+          <li>傳承方向:如果客戶年長,可考慮轉換成終身壽保 + 遺產規劃</li>
+        </ul>
+      </div>
+
+      <div class="fit-score" style="margin-top: 14px;">
+        <b>💎 高價值 IFA 嘅分別</b>:唔係你賣到幾多單,係你 10 年後<b>保住幾多客戶</b>、收到幾多<b>主動 referral</b>。計劃式 follow-up 成本低、信任高、長期回報最大。
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CLOSING ========== -->
+  <section>
+    <div class="closing">
+      <h3>銷售流程 —— 專業、透明、長期</h3>
+      <p>
+        保費融資係一個<b style="color:var(--gold-soft);">複雜工具</b>,但客戶唔需要變 expert 先買得落 —— 佢需要嘅係<b style="color:var(--gold-soft);">信得過嘅 IFA</b> 同<b style="color:var(--gold-soft);">透明嘅流程</b>。呢個 4 階段銷售循環 + 10 年 follow-up 架構,就係將你嘅專業變成可以 systemize 嘅服務。
+      </p>
+      <p>
+        記住:<b>Discovery 不足就硬推 → 短期成交、長期客訴</b>;<b>Follow-up 偷懶 → 單次交易、無 referral</b>。系統化執行每一步,業績會自己跟上嚟。
+      </p>
+      <div class="sign">Sales Playbook · Built for HK IFAs · 不構成具體銷售建議,實際執行以所屬公司 compliance policy 為準</div>
+    </div>
+  </section>
+
+  <!-- ========== CROSS-PAGE CTA ========== -->
+  <div class="cross-cta">
+    <div class="cross-cta-text">
+      <div class="cross-cta-title">準備好做 Stage 2 演示?</div>
+      <div class="cross-cta-desc">打開互動模擬器同客戶一齊試唔同情景,或者帶客戶睇原理頁建立 foundation。</div>
+    </div>
+    <a href="保費融資模擬器.html" class="cross-cta-btn">打開模擬器 →</a>
+  </div>
+
+  <div class="footer">
+    保費融資銷售流程 · 客戶旅程 + IFA Playbook · 資料版本 2026 年 4 月<br>
+    本文件僅供參考,不構成具體銷售建議;實際執行須遵守所屬公司及監管機構要求
+  </div>
+
+</div>
+
+<script>
+// ================================================================
+// Mode toggle (customer / IFA)
+// ================================================================
+const body = document.body;
+const btnC = document.getElementById('mode-customer');
+const btnI = document.getElementById('mode-ifa');
+
+function setMode(mode) {
+  if (mode === 'ifa') {
+    body.classList.add('ifa-mode');
+    btnI.classList.add('active');
+    btnC.classList.remove('active');
+    btnI.setAttribute('aria-selected', 'true');
+    btnC.setAttribute('aria-selected', 'false');
+  } else {
+    body.classList.remove('ifa-mode');
+    btnC.classList.add('active');
+    btnI.classList.remove('active');
+    btnC.setAttribute('aria-selected', 'true');
+    btnI.setAttribute('aria-selected', 'false');
+  }
+  try { localStorage.setItem('pfin-sales-mode', mode); } catch(e) {}
+}
+
+btnC.addEventListener('click', () => setMode('customer'));
+btnI.addEventListener('click', () => setMode('ifa'));
+
+// Restore persisted mode
+try {
+  const saved = localStorage.getItem('pfin-sales-mode');
+  if (saved === 'ifa') setMode('ifa');
+} catch(e) {}
+
+// ================================================================
+// Stage timeline — click to smooth-scroll to section
+// ================================================================
+document.querySelectorAll('.tl-point[data-scroll]').forEach(pt => {
+  pt.addEventListener('click', () => {
+    const targetId = pt.getAttribute('data-scroll');
+    const el = document.getElementById(targetId);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>
